@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Timberborn Modding Skill mark</title>
+  <desc id="desc">A geometric skill icon with a timber block, house roof, and blueprint grid.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2e6c9" />
+      <stop offset="100%" stop-color="#d0b07a" />
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="48" fill="#1f2937" />
+  <rect x="28" y="28" width="200" height="200" rx="36" fill="url(#bg)" />
+  <path d="M72 132 128 88l56 44v54a10 10 0 0 1-10 10H82a10 10 0 0 1-10-10Z" fill="#8b5e34"/>
+  <path d="M60 128 128 74l68 54" fill="none" stroke="#5b3b1f" stroke-linecap="round" stroke-linejoin="round" stroke-width="14"/>
+  <rect x="110" y="146" width="36" height="50" rx="8" fill="#f4e8cf"/>
+  <path d="M54 172h44M54 194h32M162 76h20M192 76h10M182 66v20" stroke="#2563eb" stroke-linecap="round" stroke-width="8"/>
+  <path d="M170 154h34M187 137v34" stroke="#2563eb" stroke-linecap="round" stroke-width="8"/>
+</svg>
