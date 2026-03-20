@@ -9,6 +9,7 @@ export default defineConfig({
   title: "Timberborn Modding Skill",
   description: "Build Timberborn mods across JSON patches, new building assets, and code-driven workflows.",
   head: [["link", { rel: "icon", href: "/skillmark.svg" }]],
+  appearance: "dark",
   lastUpdated: true,
   themeConfig: {
     logo: "/skillmark.svg",

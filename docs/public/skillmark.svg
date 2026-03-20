@@ -1,17 +1,91 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
   <title id="title">Timberborn Modding Skill mark</title>
-  <desc id="desc">A geometric skill icon with a timber block, house roof, and blueprint grid.</desc>
+  <desc id="desc">A digital-grove skill icon with a timber house, blueprint grid, and forest-green circuitry accent.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f2e6c9" />
-      <stop offset="100%" stop-color="#d0b07a" />
+    <linearGradient id="frame" x1="32" y1="24" x2="224" y2="232" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a1c1e" />
+      <stop offset="100%" stop-color="#0c0e10" />
     </linearGradient>
+    <linearGradient id="glow" x1="62" y1="52" x2="198" y2="204" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#83d8a6" stop-opacity="0.38" />
+      <stop offset="50%" stop-color="#2f855a" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#2f855a" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="wood" x1="80" y1="102" x2="176" y2="196" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#d0b07a" />
+      <stop offset="52%" stop-color="#a26d3f" />
+      <stop offset="100%" stop-color="#6a4526" />
+    </linearGradient>
+    <linearGradient id="roof" x1="74" y1="78" x2="182" y2="126" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9ff5c1" />
+      <stop offset="100%" stop-color="#2f855a" />
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
   </defs>
-  <rect width="256" height="256" rx="48" fill="#1f2937" />
-  <rect x="28" y="28" width="200" height="200" rx="36" fill="url(#bg)" />
-  <path d="M72 132 128 88l56 44v54a10 10 0 0 1-10 10H82a10 10 0 0 1-10-10Z" fill="#6a4526"/>
-  <path d="M60 128 128 74l68 54" fill="none" stroke="#5b3b1f" stroke-linecap="round" stroke-linejoin="round" stroke-width="14"/>
-  <rect x="110" y="146" width="36" height="50" rx="8" fill="#f4e8cf"/>
-  <path d="M54 172h44M54 194h32M162 76h20M192 76h10M182 66v20" stroke="#1e3a8a" stroke-linecap="round" stroke-width="8"/>
-  <path d="M170 154h34M187 137v34" stroke="#1e3a8a" stroke-linecap="round" stroke-width="8"/>
+
+  <rect width="256" height="256" rx="52" fill="#121416" />
+  <rect x="24" y="24" width="208" height="208" rx="40" fill="url(#frame)" />
+  <rect x="24" y="24" width="208" height="208" rx="40" fill="url(#glow)" />
+
+  <g stroke="#83d8a6" stroke-linecap="round" stroke-width="4">
+    <path d="M168 64h18" opacity=".48" />
+    <path d="M196 64h10" opacity=".28" />
+    <path d="M187 55v18" opacity=".36" />
+    <path d="M166 84h42" opacity=".2" />
+    <path d="M166 96h30" opacity=".14" />
+    <path d="M166 108h38" opacity=".18" />
+    <path d="M178 84v34" opacity=".12" />
+    <path d="M192 84v24" opacity=".16" />
+  </g>
+
+  <g filter="url(#softGlow)">
+    <circle cx="126" cy="128" r="56" fill="#2f855a" fill-opacity=".15" />
+  </g>
+
+  <path
+    d="M74 115 128 75l54 40"
+    fill="none"
+    stroke="url(#roof)"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="14"
+  />
+  <path
+    d="M84 118h88a14 14 0 0 1 14 14v40a18 18 0 0 1-18 18H88a18 18 0 0 1-18-18v-40a14 14 0 0 1 14-14Z"
+    fill="url(#wood)"
+  />
+  <path
+    d="M86 140h84M86 160h84"
+    fill="none"
+    stroke="#f0ddbb"
+    stroke-linecap="round"
+    stroke-opacity=".2"
+    stroke-width="4"
+  />
+  <rect x="108" y="136" width="40" height="54" rx="12" fill="#121416" fill-opacity=".78" />
+  <path d="M118 136v54M128 136v54M138 136v54" fill="none" stroke="#83d8a6" stroke-opacity=".14" stroke-width="2.5" />
+  <rect x="116" y="144" width="24" height="36" rx="8" fill="#ebe3d1" fill-opacity=".92" />
+  <circle cx="134" cy="162" r="3.5" fill="#2f855a" />
+
+  <g stroke="#83d8a6" stroke-linecap="round" stroke-width="8">
+    <path d="M170 152h30" />
+    <path d="M185 137v30" />
+  </g>
+
+  <path
+    d="M60 182h34M60 198h22"
+    fill="none"
+    stroke="#83d8a6"
+    stroke-linecap="round"
+    stroke-opacity=".6"
+    stroke-width="6"
+  />
+
+  <rect x="24" y="24" width="208" height="208" rx="40" fill="none" stroke="#83d8a6" stroke-opacity=".12" stroke-width="2" />
 </svg>
