@@ -1,0 +1,38 @@
+name: Bug report
+description: Report a problem in the skill, templates, docs, or workflows.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Describe the problem clearly.
+    validations:
+      required: true
+  - type: input
+    id: asset_type
+    attributes:
+      label: Source asset type
+      description: Example: GLB, FBX, OBJ
+  - type: dropdown
+    id: route
+    attributes:
+      label: Workflow route
+      options:
+        - Route A
+        - Route B
+        - Not sure
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Share the prompt, commands, and steps that reproduced the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or screenshots
+      description: Paste logs or attach screenshots if available.

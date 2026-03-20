@@ -6,7 +6,7 @@ import bpy
 import mathutils
 
 
-PLUGIN_DIR = r"D:\Prj\tim\.research\timbermesh\src\timbermesh_blender_plugin"
+PLUGIN_DIR = r"D:\path\to\timbermesh_blender_plugin"
 INPUT_GLB = r"D:\path\to\MyHouse.glb"
 OUTPUT_MODEL = r"D:\path\to\Assets\Mods\MyHouse\Data\Buildings\Decorations\MyHouse\MyHouse.Folktails.Model.timbermesh"
 OUTPUT_TEXTURE = r"D:\path\to\Assets\Mods\MyHouse\AssetBundles\Resources\Materials\MyHouse\MyHouseBaseTexture.png"

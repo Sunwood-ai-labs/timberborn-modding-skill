@@ -1,0 +1,29 @@
+name: Feature request
+description: Suggest an improvement for the skill, templates, docs, or workflows.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: What modding task or workflow gap are you trying to improve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed improvement
+      description: Describe the change you want.
+    validations:
+      required: true
+  - type: dropdown
+    id: route
+    attributes:
+      label: Related route
+      options:
+        - Route A
+        - Route B
+        - Both
+        - Not sure
