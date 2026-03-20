@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./docs/public/skillmark.svg" width="128" alt="Timberborn Modding Skill logo">
+  <img src="./docs/public/skillmark.svg" width="128" alt="">
   <h1>Timberborn Modding Skill</h1>
   <p><strong>Codex skill for turning GLB assets into placeable Timberborn buildings.</strong></p>
   <p>Guide Codex through route selection, Blender CLI <code>.timbermesh</code> export, Blueprint wiring, and Unity AssetBundle material workflows.</p>

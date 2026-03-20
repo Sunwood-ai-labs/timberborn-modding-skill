@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./docs/public/skillmark.svg" width="128" alt="Timberborn Modding Skill logo">
+  <img src="./docs/public/skillmark.svg" width="128" alt="">
   <h1>Timberborn Modding Skill</h1>
   <p><strong>GLB アセットを Timberborn の配置可能な建物 MOD に落とし込むための Codex スキルです。</strong></p>
   <p>ルート選定、Blender CLI による <code>.timbermesh</code> 化、Blueprint 配線、Unity AssetBundle material ワークフローまでを案内します。</p>
@@ -94,8 +94,8 @@ Use $timberborn-modding and preserve the original GLB texture with the Unity Ass
 ## 🌐 ドキュメント
 
 - 公開 docs: [sunwood-ai-labs.github.io/timberborn-modding-skill](https://sunwood-ai-labs.github.io/timberborn-modding-skill/)
-- 導入: [Getting Started](https://sunwood-ai-labs.github.io/timberborn-modding-skill/guide/getting-started)
-- トラブルシュート: [Troubleshooting Guide](https://sunwood-ai-labs.github.io/timberborn-modding-skill/guide/troubleshooting)
+- 導入: [はじめに](https://sunwood-ai-labs.github.io/timberborn-modding-skill/ja/guide/getting-started)
+- トラブルシュート: [トラブルシュート](https://sunwood-ai-labs.github.io/timberborn-modding-skill/ja/guide/troubleshooting)
 
 ## ✅ 検証
 

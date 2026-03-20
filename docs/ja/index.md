@@ -7,7 +7,7 @@ hero:
   tagline: ルート選定、Blender CLI による timbermesh 化、Blueprint 配線、Unity AssetBundle material ワークフローを案内する Codex スキルです。
   image:
     src: /skillmark.svg
-    alt: Timberborn Modding Skill logo
+    alt: ""
   actions:
     - theme: brand
       text: はじめに
@@ -25,9 +25,8 @@ features:
     details: MaterialCollection path、`.mat` と `.png` の basename 衝突、再起動前提の確認ポイントまで整理しています。
 ---
 
-## クイックリンク
+## 進め方の 3 ステップ
 
-- [はじめに](/ja/guide/getting-started)
-- [ルート選定](/ja/guide/workflow-routes)
-- [リポジトリ構成](/ja/guide/repository-structure)
-- [トラブルシュート](/ja/guide/troubleshooting)
+1. まずは [はじめに](/ja/guide/getting-started) で Blender、Unity、リポジトリ構成の前提をそろえます。
+2. 次に [ルート選定](/ja/guide/workflow-routes) を見て、built-in material で進めるか、AssetBundle が必要かを判断します。
+3. 作業中は [トラブルシュート](/ja/guide/troubleshooting) を開いておき、MaterialCollection や basename 衝突をすぐ切り分けます。

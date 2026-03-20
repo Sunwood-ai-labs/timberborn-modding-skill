@@ -16,10 +16,6 @@ export default defineConfig({
       provider: "local",
     },
     socialLinks: [{ icon: "github", link: repo }],
-    footer: {
-      message: "Released under the MIT License.",
-      copyright: "Copyright (c) 2026 Sunwood-ai-labs",
-    },
   },
   locales: {
     root: {
@@ -30,7 +26,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: "Guide", link: "/guide/getting-started" },
-          { text: "Workflow", link: "/guide/workflow-routes" },
+          { text: "Routes", link: "/guide/workflow-routes" },
           { text: "Troubleshooting", link: "/guide/troubleshooting" },
         ],
         sidebar: [
@@ -38,12 +34,16 @@ export default defineConfig({
             text: "Guide",
             items: [
               { text: "Getting Started", link: "/guide/getting-started" },
-              { text: "Workflow Routes", link: "/guide/workflow-routes" },
+              { text: "Route Guide", link: "/guide/workflow-routes" },
               { text: "Repository Structure", link: "/guide/repository-structure" },
               { text: "Troubleshooting", link: "/guide/troubleshooting" },
             ],
           },
         ],
+        footer: {
+          message: "Released under the MIT License.",
+          copyright: "Copyright (c) 2026 Sunwood-ai-labs",
+        },
         editLink: {
           pattern: "https://github.com/Sunwood-ai-labs/timberborn-modding-skill/edit/main/docs/:path",
           text: "Edit this page on GitHub",
@@ -59,7 +59,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: "ガイド", link: "/ja/guide/getting-started" },
-          { text: "ワークフロー", link: "/ja/guide/workflow-routes" },
+          { text: "ルート選定", link: "/ja/guide/workflow-routes" },
           { text: "トラブルシュート", link: "/ja/guide/troubleshooting" },
         ],
         sidebar: [
@@ -74,6 +74,10 @@ export default defineConfig({
           },
         ],
         outlineTitle: "目次",
+        footer: {
+          message: "MIT License のもとで公開しています。",
+          copyright: "Copyright (c) 2026 Sunwood-ai-labs",
+        },
         editLink: {
           pattern: "https://github.com/Sunwood-ai-labs/timberborn-modding-skill/edit/main/docs/:path",
           text: "GitHub でこのページを編集",
