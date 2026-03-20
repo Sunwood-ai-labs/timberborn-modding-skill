@@ -67,6 +67,16 @@ Use $timberborn-modding to scaffold a Timberborn C# mod with a small in-game set
 
 大事なのは、最初に MOD トラックを決めることです。そのうえで、新規建物アセットの中だけで ルートA / ルートB を選びます。
 
+## 🗺️ 新規建物アセットフロー
+
+新しい配置物を作るときに、ルートA / ルートB の分岐を含めた全体像を一目で確認したい場合はこの図を使います。
+
+![新規建物アセットフロー](./assets/new-building-asset-flow.drawio.png)
+
+- ガイドページ: [ルート選定](./docs/ja/guide/workflow-routes.md)
+- SVG を開く: [new-building-asset-flow.drawio.svg](./assets/new-building-asset-flow.drawio.svg)
+- 元ファイルを編集: [new-building-asset-flow.drawio](./assets/new-building-asset-flow.drawio)
+
 ## 📦 同梱リソース
 
 - [SKILL.md](./SKILL.md): Codex 向けのスキル定義

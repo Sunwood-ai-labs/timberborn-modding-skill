@@ -3,6 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "predocs:dev": "node ../scripts/sync_docs_diagram_assets.mjs",
+    "predocs:build": "node ../scripts/sync_docs_diagram_assets.mjs",
+    "predocs:preview": "node ../scripts/sync_docs_diagram_assets.mjs",
     "docs:dev": "vitepress dev .",
     "docs:build": "vitepress build .",
     "docs:preview": "vitepress preview ."

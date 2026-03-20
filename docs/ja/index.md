@@ -30,3 +30,5 @@ features:
 1. まずは [はじめに](/ja/guide/getting-started) でトラック、出力先、使用ツールの前提をそろえます。
 2. 次に [MOD 種別](/ja/guide/mod-types) を見て、JSON、建物アセット、DLL、advanced runtime patch のどれかを選びます。
 3. その後に [ルート選定](/ja/guide/workflow-routes) と [トラブルシュート](/ja/guide/troubleshooting) を使って詰めます。
+
+新規建物アセットの分岐を一枚で見たい場合は [ルート選定](/ja/guide/workflow-routes) を開いてください。新規建物アセットフローの SVG をそのまま掲載しています。

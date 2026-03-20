@@ -30,3 +30,5 @@ features:
 1. Read [Getting Started](/guide/getting-started) to line up the mod track, target paths, and tool assumptions.
 2. Use [Mod Types](/guide/mod-types) to choose between JSON, asset, DLL, and advanced runtime work.
 3. Move to [Workflow Routes](/guide/workflow-routes) and keep [Troubleshooting](/guide/troubleshooting) open while iterating.
+
+If you want the building-asset route split in one glance, open [Workflow Routes](/guide/workflow-routes). The guide now includes the full SVG for the new building asset flow.

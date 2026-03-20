@@ -37,6 +37,18 @@
 - 新しい配置物を追加したい
 - `.timbermesh`、アイコン、localization、`TemplateCollection` が必要
 
+### 新規建物アセットフロー
+
+ファイルを触り始める前に、ルートA と ルートB の分岐を一枚で確認したいときはこの図を見てください。
+
+![新規建物アセットフロー](/new-building-asset-flow.drawio.png)
+
+元ファイル:
+
+- [SVG を開く](/new-building-asset-flow.drawio.svg)
+- [draw.io ソース](https://github.com/Sunwood-ai-labs/timberborn-modding-skill/blob/main/assets/new-building-asset-flow.drawio)
+- 正本の図エクスポートは `assets/` に置き、docs サイト用の `docs/public/` には `node scripts/sync_docs_diagram_assets.mjs` で同期します。
+
 ### ルートA: Timberborn built-in material を使う
 
 向いているケース:

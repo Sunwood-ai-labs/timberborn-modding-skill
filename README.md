@@ -67,6 +67,16 @@ Use $timberborn-modding to scaffold a Timberborn C# mod with a small in-game set
 
 The key rule is simple: choose the mod track first, then choose Route A or Route B only inside the new building asset track.
 
+## 🗺️ New Building Asset Flow
+
+Use this diagram when the task is a new placeable building and you want the full route split at a glance.
+
+![New building asset flow](./assets/new-building-asset-flow.en.drawio.png)
+
+- Guide page: [Workflow Routes](./docs/guide/workflow-routes.md)
+- View SVG: [new-building-asset-flow.en.drawio.svg](./assets/new-building-asset-flow.en.drawio.svg)
+- Edit source: [new-building-asset-flow.en.drawio](./assets/new-building-asset-flow.en.drawio)
+
 ## 📦 Bundled Resources
 
 - [SKILL.md](./SKILL.md): trigger description and operating instructions for Codex

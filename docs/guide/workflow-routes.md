@@ -37,6 +37,18 @@ Use this when:
 - the user wants a new placeable building
 - `.timbermesh`, icon, localization, or `TemplateCollection` are involved
 
+### New Building Asset Flow
+
+Use this diagram when you want the full Route A versus Route B split in one glance before editing files.
+
+![New building asset flow](/new-building-asset-flow.en.drawio.png)
+
+Source files:
+
+- [View SVG](/new-building-asset-flow.en.drawio.svg)
+- [draw.io source](https://github.com/Sunwood-ai-labs/timberborn-modding-skill/blob/main/assets/new-building-asset-flow.en.drawio)
+- The canonical diagram exports live under `assets/`, and the docs-site copies in `docs/public/` are synced with `node scripts/sync_docs_diagram_assets.mjs`.
+
 ### Route A: Built-in Timberborn Materials
 
 Use Route A when:
