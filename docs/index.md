@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: Timberborn Modding Skill
-  text: Turn GLB assets into placeable Timberborn buildings
-  tagline: A Codex skill for route selection, Blender CLI timbermesh export, Blueprint wiring, and Unity AssetBundle material workflows.
+  text: Build Timberborn mods from JSON patches to custom building assets
+  tagline: A Codex skill for choosing between content mods, building asset routes, Unity AssetBundles, and C# or BepInEx escalation.
   image:
     src: /skillmark.svg
     alt: ""
@@ -17,16 +17,16 @@ hero:
       link: /guide/troubleshooting
 
 features:
-  - title: Choose the route first
-    details: Decide early between a built-in Timberborn material path and a custom AssetBundle path.
-  - title: Practical templates
-    details: Reuse starter files for Blender export, building Blueprints, material registration, and TemplateCollection wiring.
-  - title: Real-world guardrails
-    details: Avoid common Timberborn modding pitfalls such as broken MaterialCollection paths or basename collisions between `.mat` and `.png`.
+  - title: Choose the mod type first
+    details: Start by deciding whether the task is a JSON content mod, a balance pack, a new building asset, or a code-driven mod.
+  - title: Route A or Route B for assets
+    details: For new building assets, decide early between built-in Timberborn materials and a custom AssetBundle path.
+  - title: Practical guardrails
+    details: Reuse the bundled references and avoid common mistakes such as hidden Blueprint assumptions or basename collisions.
 ---
 
-## Decide Your Route
+## Start in 3 Steps
 
-1. Start with [Getting Started](/guide/getting-started) to line up the Blender, Unity, and repo assumptions.
-2. Use the [Route Guide](/guide/workflow-routes) to decide whether the asset can stay on built-in Timberborn materials or needs a custom AssetBundle.
-3. Keep [Troubleshooting](/guide/troubleshooting) open while iterating so you can catch MaterialCollection, basename, and restart issues quickly.
+1. Read [Getting Started](/guide/getting-started) to line up the mod track, target paths, and tool assumptions.
+2. Use [Mod Types](/guide/mod-types) to choose between JSON, asset, DLL, and advanced runtime work.
+3. Move to [Workflow Routes](/guide/workflow-routes) and keep [Troubleshooting](/guide/troubleshooting) open while iterating.

@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: Timberborn Modding Skill
-  text: GLB アセットを Timberborn の配置可能な建物 MOD にする
-  tagline: ルート選定、Blender CLI による timbermesh 化、Blueprint 配線、Unity AssetBundle material ワークフローを案内する Codex スキルです。
+  text: JSON patch から新規建物アセットまで Timberborn MOD を作る
+  tagline: content mod、建物アセット、Unity AssetBundle、C# や BepInEx への分岐を案内する Codex スキルです。
   image:
     src: /skillmark.svg
     alt: ""
@@ -17,16 +17,16 @@ hero:
       link: /ja/guide/troubleshooting
 
 features:
-  - title: 先にルートを決める
-    details: Timberborn built-in material で行くか、custom AssetBundle で行くかを早めに判断できます。
-  - title: すぐ使えるテンプレート
-    details: Blender export、建物 Blueprint、material 登録、TemplateCollection 配線の雛形を同梱しています。
+  - title: 先に MOD 種別を決める
+    details: JSON content mod、調整パック、新規建物アセット、code-driven mod のどれかを先に判断できます。
+  - title: 建物アセットはルートAかルートB
+    details: 新規建物アセットでは、built-in material で進めるか、AssetBundle が必要かを早めに決められます。
   - title: 実戦の落とし穴を回避
-    details: MaterialCollection path、`.mat` と `.png` の basename 衝突、再起動前提の確認ポイントまで整理しています。
+    details: MaterialCollection path、`.mat` と `.png` の basename 衝突、Blueprint に値が見えないケースまで整理しています。
 ---
 
 ## 進め方の 3 ステップ
 
-1. まずは [はじめに](/ja/guide/getting-started) で Blender、Unity、リポジトリ構成の前提をそろえます。
-2. 次に [ルート選定](/ja/guide/workflow-routes) を見て、built-in material で進めるか、AssetBundle が必要かを判断します。
-3. 作業中は [トラブルシュート](/ja/guide/troubleshooting) を開いておき、MaterialCollection や basename 衝突をすぐ切り分けます。
+1. まずは [はじめに](/ja/guide/getting-started) でトラック、出力先、使用ツールの前提をそろえます。
+2. 次に [MOD 種別](/ja/guide/mod-types) を見て、JSON、建物アセット、DLL、advanced runtime patch のどれかを選びます。
+3. その後に [ルート選定](/ja/guide/workflow-routes) と [トラブルシュート](/ja/guide/troubleshooting) を使って詰めます。

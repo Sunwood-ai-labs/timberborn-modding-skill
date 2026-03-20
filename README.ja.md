@@ -1,8 +1,8 @@
 <div align="center">
   <img src="./docs/public/skillmark.svg" width="128" alt="">
   <h1>Timberborn Modding Skill</h1>
-  <p><strong>GLB アセットを Timberborn の配置可能な建物 MOD に落とし込むための Codex スキルです。</strong></p>
-  <p>ルート選定、Blender CLI による <code>.timbermesh</code> 化、Blueprint 配線、Unity AssetBundle material ワークフローまでを案内します。</p>
+  <p><strong>JSON 調整 MOD、新規建物アセット、UI 付き code mod まで扱う Timberborn 向け Codex スキルです。</strong></p>
+  <p>content mod の分岐、Blender CLI による <code>.timbermesh</code> 化、Blueprint 配線、Unity AssetBundle material、C# や BepInEx への段階的な移行まで案内します。</p>
 </div>
 
 <div align="center">
@@ -20,14 +20,17 @@
 
 ## ✨ 概要
 
-`timberborn-modding` は、Timberborn の建物 MOD 制作に特化した Codex スキルです。
+`timberborn-modding` は、Timberborn MOD 制作で「どのトラックで進めるべきか」を最初に正しく選ぶための Codex スキルです。
 
-特に次の分岐を早めに正しく判断できるようにします。
+次の流れをまとめて扱えます。
 
-- ルートA: Timberborn 既存 material を使い、`Blender + .timbermesh + Blueprint` で軽く進める
-- ルートB: custom texture を維持し、`Blender + .timbermesh + Unity + AssetBundle` で仕上げる
+- JSON content mod で既存 Blueprint 値を patch する
+- JSON 調整パックで多数の数値変更をまとめる
+- 新規建物アセットで ルートA / ルートB を選ぶ
+- C# DLL / UI MOD でゲーム内設定や code-driven な挙動を足す
+- Blueprint や通常 API で足りない場合に BepInEx / Harmony へ進む
 
-実戦でハマりやすい `MaterialCollection`、`.mat` と `.png` の basename 衝突、再起動前提の確認ポイントまで含めて再利用できる形でまとめています。
+`MaterialCollection`、`.mat` と `.png` の basename 衝突、Blueprint に値が見えないケース、再起動前提の確認ポイントまで含めて再利用できる形でまとめています。
 
 ## 🚀 クイックスタート
 
@@ -40,27 +43,34 @@ git clone https://github.com/Sunwood-ai-labs/timberborn-modding-skill.git "$HOME
 2. Codex にスキル利用を指示します。
 
 ```text
-Use $timberborn-modding to turn my GLB into a Timberborn building mod.
+Use $timberborn-modding to make a Timberborn JSON content mod that lowers building science cost.
 ```
-
-3. custom texture を維持したい場合は明示します。
 
 ```text
 Use $timberborn-modding and preserve the original GLB texture with the Unity AssetBundle path.
 ```
 
-## 🧭 ルート選定
+```text
+Use $timberborn-modding to scaffold a Timberborn C# mod with a small in-game settings panel.
+```
 
-| ルート | 向いているケース | 主なツール |
+## 🧭 MOD トラック
+
+| トラック | 向いているケース | 主なツール |
 | --- | --- | --- |
-| ルートA | Timberborn 風の built-in material で十分 | Blender CLI、`.timbermesh`、Blueprint |
-| ルートB | 元の texture を保ちたい | Blender CLI、`.timbermesh`、Unity CLI、AssetBundle |
+| JSON content mod | 既存 Blueprint の値変更だけで足りる | `Empty`、`*.blueprint.json` |
+| JSON 調整パック | 多数の数値変更をまとめたい | `Empty`、生成または整理した JSON |
+| 新規建物アセット: ルートA | Timberborn 風の built-in material で十分 | Blender CLI、`.timbermesh`、Blueprint |
+| 新規建物アセット: ルートB | 元の texture を保ちたい | Blender CLI、`.timbermesh`、Unity CLI、AssetBundle |
+| C# DLL / UI MOD | ゲーム内設定や code-driven な挙動が必要 | C#、Timberborn assemblies、必要に応じて JSON 生成 |
+| BepInEx / Harmony | Blueprint や通常 API では届かない | runtime patch |
 
-大事なのは、texture-baked 型の `GLB` を無理にルートAで押し切らないことです。見た目の情報が画像側に強くあるなら、早めにルートBへ切り替えたほうが安定します。
+大事なのは、最初に MOD トラックを決めることです。そのうえで、新規建物アセットの中だけで ルートA / ルートB を選びます。
 
 ## 📦 同梱リソース
 
 - [SKILL.md](./SKILL.md): Codex 向けのスキル定義
+- [mod types reference](./references/mod-types.md): JSON、建物アセット、DLL、advanced runtime patch の分岐
 - [workflow reference](./references/workflow.md): 標準フローと分岐
 - [troubleshooting reference](./references/troubleshooting.md): よくある失敗の切り分け
 - [Route A example](./references/example-route-a.md): built-in material 前提の最小例
@@ -72,6 +82,8 @@ Use $timberborn-modding and preserve the original GLB texture with the Unity Ass
 
 ## 🛠️ このスキルが防ぐ失敗
 
+- 単純な JSON content mod で済むのに、いきなり新規建物アセットへ進んでしまう
+- hidden な runtime 挙動を Blueprint 値だと思い込む
 - `.timbermesh` 化だけで元の GLB texture がそのまま出ると思い込む
 - texture-baked 型アセットでルート選択を誤る
 - `MaterialCollection` に Timberborn が解決できない path を書く
@@ -94,6 +106,7 @@ Use $timberborn-modding and preserve the original GLB texture with the Unity Ass
 ## 🌐 ドキュメント
 
 - 公開 docs: [sunwood-ai-labs.github.io/timberborn-modding-skill](https://sunwood-ai-labs.github.io/timberborn-modding-skill/)
+- MOD 種別: [MOD 種別](https://sunwood-ai-labs.github.io/timberborn-modding-skill/ja/guide/mod-types)
 - 導入: [はじめに](https://sunwood-ai-labs.github.io/timberborn-modding-skill/ja/guide/getting-started)
 - トラブルシュート: [トラブルシュート](https://sunwood-ai-labs.github.io/timberborn-modding-skill/ja/guide/troubleshooting)
 

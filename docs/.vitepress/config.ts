@@ -7,7 +7,7 @@ export default defineConfig({
   cleanUrls: true,
   lang: "en-US",
   title: "Timberborn Modding Skill",
-  description: "Turn GLB assets into placeable Timberborn buildings with Codex.",
+  description: "Build Timberborn mods across JSON patches, new building assets, and code-driven workflows.",
   head: [["link", { rel: "icon", href: "/skillmark.svg" }]],
   lastUpdated: true,
   themeConfig: {
@@ -22,11 +22,12 @@ export default defineConfig({
       label: "English",
       lang: "en-US",
       title: "Timberborn Modding Skill",
-      description: "Turn GLB assets into placeable Timberborn buildings with Codex.",
+      description: "Build Timberborn mods across JSON patches, new building assets, and code-driven workflows.",
       themeConfig: {
         nav: [
           { text: "Guide", link: "/guide/getting-started" },
-          { text: "Routes", link: "/guide/workflow-routes" },
+          { text: "Mod Types", link: "/guide/mod-types" },
+          { text: "Workflow", link: "/guide/workflow-routes" },
           { text: "Troubleshooting", link: "/guide/troubleshooting" },
         ],
         sidebar: [
@@ -34,7 +35,8 @@ export default defineConfig({
             text: "Guide",
             items: [
               { text: "Getting Started", link: "/guide/getting-started" },
-              { text: "Route Guide", link: "/guide/workflow-routes" },
+              { text: "Mod Types", link: "/guide/mod-types" },
+              { text: "Workflow", link: "/guide/workflow-routes" },
               { text: "Repository Structure", link: "/guide/repository-structure" },
               { text: "Troubleshooting", link: "/guide/troubleshooting" },
             ],
@@ -55,10 +57,11 @@ export default defineConfig({
       lang: "ja-JP",
       link: "/ja/",
       title: "Timberborn Modding Skill",
-      description: "GLB アセットを Timberborn の建物 MOD に落とし込むための Codex スキル。",
+      description: "JSON patch から新規建物アセット、code-driven mod まで扱う Codex スキル。",
       themeConfig: {
         nav: [
           { text: "ガイド", link: "/ja/guide/getting-started" },
+          { text: "MOD 種別", link: "/ja/guide/mod-types" },
           { text: "ルート選定", link: "/ja/guide/workflow-routes" },
           { text: "トラブルシュート", link: "/ja/guide/troubleshooting" },
         ],
@@ -67,6 +70,7 @@ export default defineConfig({
             text: "ガイド",
             items: [
               { text: "はじめに", link: "/ja/guide/getting-started" },
+              { text: "MOD 種別", link: "/ja/guide/mod-types" },
               { text: "ルート選定", link: "/ja/guide/workflow-routes" },
               { text: "リポジトリ構成", link: "/ja/guide/repository-structure" },
               { text: "トラブルシュート", link: "/ja/guide/troubleshooting" },

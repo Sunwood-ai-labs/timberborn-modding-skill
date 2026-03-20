@@ -26,6 +26,7 @@ Reusable implementation starters:
 
 Detailed guidance loaded on demand:
 
+- mod-type selection
 - standard workflow
 - troubleshooting notes
 

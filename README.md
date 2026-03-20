@@ -1,8 +1,8 @@
 <div align="center">
   <img src="./docs/public/skillmark.svg" width="128" alt="">
   <h1>Timberborn Modding Skill</h1>
-  <p><strong>Codex skill for turning GLB assets into placeable Timberborn buildings.</strong></p>
-  <p>Guide Codex through route selection, Blender CLI <code>.timbermesh</code> export, Blueprint wiring, and Unity AssetBundle material workflows.</p>
+  <p><strong>Codex skill for Timberborn mod creation across JSON balance patches, new building assets, and UI-driven code mods.</strong></p>
+  <p>Guide Codex through content-mod track selection, Blender CLI <code>.timbermesh</code> export, Blueprint wiring, Unity AssetBundle material workflows, and when to escalate to C# or BepInEx.</p>
 </div>
 
 <div align="center">
@@ -20,14 +20,17 @@
 
 ## ✨ Overview
 
-`timberborn-modding` is a Codex skill focused on one job: taking Timberborn building ideas from source assets to a working in-game mod.
+`timberborn-modding` is a Codex skill for choosing the right Timberborn mod track before implementation gets messy.
 
-It helps Codex choose the right path early:
+It now covers the full ladder:
 
-- Route A: use Timberborn built-in materials and ship fast with `Blender + .timbermesh + Blueprint`
-- Route B: preserve custom textures with `Blender + .timbermesh + Unity + AssetBundle`
+- JSON content mods for patching existing Blueprint values
+- JSON adjustment packs for larger rebalance bundles
+- New building assets with Route A or Route B
+- C# DLL and UI mods when in-game controls are needed
+- BepInEx or Harmony escalation when Blueprint and normal APIs are not enough
 
-The skill bundles practical references, reusable templates, and guardrails based on a real end-to-end Timberborn building workflow.
+The skill bundles practical references, reusable templates, and guardrails based on real Timberborn modding workflows.
 
 ## 🚀 Quick Start
 
@@ -40,27 +43,34 @@ git clone https://github.com/Sunwood-ai-labs/timberborn-modding-skill.git "$HOME
 2. Ask Codex to use it.
 
 ```text
-Use $timberborn-modding to turn my GLB into a Timberborn building mod.
+Use $timberborn-modding to make a Timberborn JSON content mod that lowers building science cost.
 ```
-
-3. For a custom textured asset, be explicit.
 
 ```text
 Use $timberborn-modding and preserve the original GLB texture with the Unity AssetBundle path.
 ```
 
-## 🧭 Route Selection
+```text
+Use $timberborn-modding to scaffold a Timberborn C# mod with a small in-game settings panel.
+```
 
-| Route | Use it when | Main tools |
+## 🧭 Mod Tracks
+
+| Track | Use it when | Main tools |
 | --- | --- | --- |
-| Route A | Timberborn-style built-in materials are enough | Blender CLI, `.timbermesh`, Blueprint |
-| Route B | The original textured look must survive | Blender CLI, `.timbermesh`, Unity CLI, AssetBundle |
+| JSON content mod | Existing Blueprint values are enough | `Empty`, `*.blueprint.json` |
+| JSON adjustment pack | Many related value patches belong together | `Empty`, generated or organized JSON |
+| New building asset: Route A | Timberborn-style built-in materials are enough | Blender CLI, `.timbermesh`, Blueprint |
+| New building asset: Route B | The original textured look must survive | Blender CLI, `.timbermesh`, Unity CLI, AssetBundle |
+| C# DLL or UI mod | In-game controls or code-driven behavior are needed | C#, Timberborn assemblies, optional JSON generation |
+| BepInEx or Harmony | The feature is not exposed in Blueprint or normal APIs | Runtime patching |
 
-The key rule is simple: if the source mesh is texture-baked and visual detail mostly lives in the image, move to Route B early instead of over-tuning material remaps.
+The key rule is simple: choose the mod track first, then choose Route A or Route B only inside the new building asset track.
 
 ## 📦 Bundled Resources
 
 - [SKILL.md](./SKILL.md): trigger description and operating instructions for Codex
+- [mod types reference](./references/mod-types.md): choose between JSON, asset, DLL, and advanced runtime tracks
 - [workflow reference](./references/workflow.md): route split, commands, and deliverables
 - [troubleshooting reference](./references/troubleshooting.md): common Timberborn asset failures
 - [Route A example](./references/example-route-a.md): minimal built-in material scenario
@@ -72,6 +82,8 @@ The key rule is simple: if the source mesh is texture-baked and visual detail mo
 
 ## 🛠️ What The Skill Guards Against
 
+- Choosing a new building asset workflow when a simple JSON content mod would do
+- Treating a hidden runtime behavior as if it were a visible Blueprint value
 - Assuming `.timbermesh` alone preserves the original GLB texture look
 - Choosing the wrong route for texture-baked assets
 - Registering `MaterialCollection` with a path shape that Timberborn cannot resolve
@@ -94,7 +106,8 @@ The key rule is simple: if the source mesh is texture-baked and visual detail mo
 ## 🌐 Documentation
 
 - Live docs: [sunwood-ai-labs.github.io/timberborn-modding-skill](https://sunwood-ai-labs.github.io/timberborn-modding-skill/)
-- Start here: [Getting Started](https://sunwood-ai-labs.github.io/timberborn-modding-skill/guide/getting-started)
+- Mod Types: [Mod Types](https://sunwood-ai-labs.github.io/timberborn-modding-skill/guide/mod-types)
+- Getting Started: [Getting Started](https://sunwood-ai-labs.github.io/timberborn-modding-skill/guide/getting-started)
 - Troubleshooting: [Troubleshooting Guide](https://sunwood-ai-labs.github.io/timberborn-modding-skill/guide/troubleshooting)
 
 ## ✅ Validation

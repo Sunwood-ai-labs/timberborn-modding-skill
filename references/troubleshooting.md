@@ -1,5 +1,31 @@
 # Troubleshooting
 
+## JSON patch has no visible effect
+
+Likely causes:
+
+- the patch file path does not match the game Blueprint path
+- the wrong mod template or mod folder is being used
+- Timberborn has not been fully restarted
+
+Check:
+
+- The patch path mirrors the game Blueprint path exactly.
+- The mod is built as a normal content mod under the active Mods directory.
+- The game was restarted after the file change.
+
+## The target value cannot be found in Blueprint
+
+Likely causes:
+
+- the value is exposed only in code, not in content
+- the request is really a runtime behavior change rather than a data patch
+
+Response:
+
+- Do not guess at hidden JSON keys.
+- Escalate to a C# DLL mod or BepInEx or Harmony only after confirming the Blueprint does not expose the value.
+
 ## "Material <name> not found in repository"
 
 Likely causes:
@@ -77,3 +103,15 @@ Check:
 - Built `.timbermesh` file existence
 - Bundle existence
 - MaterialCollection registration key
+
+## A settings UI is needed but JSON alone is too static
+
+Likely causes:
+
+- the user wants in-game toggles or generated settings files
+- the change should be triggered from UI rather than by editing files manually
+
+Response:
+
+- Move from a pure content mod to a C# DLL or UI mod.
+- Be explicit about whether the UI writes JSON for next launch or changes behavior live.

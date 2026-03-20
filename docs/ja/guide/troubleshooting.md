@@ -1,5 +1,19 @@
 # トラブルシュート
 
+## JSON patch が効かない
+
+確認すること:
+
+- patch ファイルの path が元の game Blueprint path と一致しているか
+- content mod として正しいテンプレートから始めているか
+- 変更後に Timberborn を完全再起動したか
+
+## Blueprint に値が見つからない
+
+この場合は、純粋な content mod の範囲を超えている可能性が高いです。
+
+値や挙動が Blueprint に露出していないなら、hidden な JSON key を推測するのではなく、C# DLL MOD や BepInEx / Harmony への移行を検討します。
+
 ## Material が Repository に見つからない
 
 確認すること:
@@ -25,3 +39,9 @@
 ## ゲーム内で古い状態のまま見える
 
 custom material や AssetBundle を更新したら、Timberborn を完全終了してから再起動してください。
+
+## ゲーム内設定パネルが欲しい
+
+これは static JSON だけでは足りないサインです。
+
+ゲーム内トグル、通知、Save ボタンからの JSON 生成が必要なら、C# DLL / UI MOD へ進みます。

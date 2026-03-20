@@ -82,6 +82,7 @@ def validate_skill(repo: Path) -> list[str]:
         repo / "assets" / "building_blueprint.template.json",
         repo / "assets" / "material_collection.template.json",
         repo / "assets" / "template_collection_buildings.template.json",
+        repo / "references" / "mod-types.md",
         repo / "references" / "workflow.md",
         repo / "references" / "troubleshooting.md",
         repo / "references" / "example-route-a.md",
@@ -92,10 +93,12 @@ def validate_skill(repo: Path) -> list[str]:
         repo / "docs" / "index.md",
         repo / "docs" / "ja" / "index.md",
         repo / "docs" / "guide" / "getting-started.md",
+        repo / "docs" / "guide" / "mod-types.md",
         repo / "docs" / "guide" / "workflow-routes.md",
         repo / "docs" / "guide" / "repository-structure.md",
         repo / "docs" / "guide" / "troubleshooting.md",
         repo / "docs" / "ja" / "guide" / "getting-started.md",
+        repo / "docs" / "ja" / "guide" / "mod-types.md",
         repo / "docs" / "ja" / "guide" / "workflow-routes.md",
         repo / "docs" / "ja" / "guide" / "repository-structure.md",
         repo / "docs" / "ja" / "guide" / "troubleshooting.md",
@@ -110,15 +113,21 @@ def validate_skill(repo: Path) -> list[str]:
         assert_exists(path, path.relative_to(repo).as_posix(), errors)
 
     for needle, label in [
+        ("JSON content mod", "README JSON scope"),
+        ("C# DLL and UI mods", "README code mod scope"),
         ("Route A", "README route split"),
         ("Route B", "README route split"),
         ("https://sunwood-ai-labs.github.io/timberborn-modding-skill/", "README docs link"),
+        ("https://sunwood-ai-labs.github.io/timberborn-modding-skill/guide/mod-types", "README mod types link"),
         ('git clone https://github.com/Sunwood-ai-labs/timberborn-modding-skill.git "$HOME/.codex/skills/timberborn-modding"', "README install command"),
         ("uv run --with pyyaml python scripts/validate_skill.py .", "README validation command"),
     ]:
         assert_contains(readme_text, needle, label, errors)
 
     for needle, label in [
+        ("JSON content mod", "README.ja JSON scope"),
+        ("C# DLL / UI MOD", "README.ja code mod scope"),
+        ("https://sunwood-ai-labs.github.io/timberborn-modding-skill/ja/guide/mod-types", "README.ja mod types link"),
         ("ルートA", "README.ja route split"),
         ("ルートB", "README.ja route split"),
         ("https://sunwood-ai-labs.github.io/timberborn-modding-skill/ja/guide/getting-started", "README.ja localized docs link"),
@@ -130,22 +139,26 @@ def validate_skill(repo: Path) -> list[str]:
     for needle, label in [
         ('base: "/timberborn-modding-skill/"', "VitePress base"),
         ('provider: "local"', "local search"),
-        ('link: "/guide/workflow-routes"', "English route link"),
-        ('link: "/ja/guide/workflow-routes"', "Japanese route link"),
+        ('link: "/guide/mod-types"', "English mod types link"),
+        ('link: "/guide/workflow-routes"', "English workflow link"),
+        ('link: "/ja/guide/mod-types"', "Japanese mod types link"),
+        ('link: "/ja/guide/workflow-routes"', "Japanese workflow link"),
         ('message: "MIT License のもとで公開しています。"', "Japanese footer"),
     ]:
         assert_contains(docs_config_text, needle, label, errors)
 
     for needle, label in [
-        ("## Decide Your Route", "docs landing route guidance"),
-        ("[Route Guide](/guide/workflow-routes)", "docs route guide link"),
+        ("## Start in 3 Steps", "docs landing route guidance"),
+        ("[Mod Types](/guide/mod-types)", "docs mod types link"),
+        ("[Workflow Routes](/guide/workflow-routes)", "docs workflow link"),
         ("[Troubleshooting](/guide/troubleshooting)", "docs troubleshooting link"),
     ]:
         assert_contains(docs_index_text, needle, label, errors)
 
     for needle, label in [
         ("## 進め方の 3 ステップ", "docs ja landing route guidance"),
-        ("[ルート選定](/ja/guide/workflow-routes)", "docs ja route link"),
+        ("[MOD 種別](/ja/guide/mod-types)", "docs ja mod types link"),
+        ("[ルート選定](/ja/guide/workflow-routes)", "docs ja workflow link"),
         ("[トラブルシュート](/ja/guide/troubleshooting)", "docs ja troubleshooting link"),
     ]:
         assert_contains(docs_index_ja_text, needle, label, errors)
