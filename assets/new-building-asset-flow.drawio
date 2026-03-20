@@ -1,0 +1,161 @@
+<mxfile host="app.diagrams.net" modified="2026-03-20T11:00:00.000Z" agent="Codex GPT-5" version="27.0.5">
+  <diagram id="new-building-asset-flow" name="New Building Asset Flow">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1260" math="0" shadow="0" background="none" defaultFontFamily="Noto Sans JP">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#121416;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1800" height="1200" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="title" value="新規建物アセットの作成フロー" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=34;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#f3fff7;" vertex="1" parent="1">
+          <mxGeometry x="52" y="38" width="980" height="42" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="Timberborn の新しい配置物を作るときの標準ルート。Route A/B は「新規建物アセット」トラックの中で分岐する。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontFamily=Noto Sans JP;fontColor=#c4d2cb;" vertex="1" parent="1">
+          <mxGeometry x="54" y="86" width="1240" height="28" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="scope" value="&lt;font style=&quot;font-size:11px;color:#83d8a6;letter-spacing:1px;&quot;&gt;SCOPE&lt;/font&gt;&lt;br&gt;&lt;b&gt;この図の対象&lt;/b&gt;&lt;br&gt;新規建物アセット向け。&lt;br&gt;既存値だけの変更なら&lt;br&gt;&lt;b&gt;Empty + JSON content mod&lt;/b&gt; が先。" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1c1e;strokeColor=#3f4942;strokeWidth=1.5;fontSize=18;fontFamily=Noto Sans JP;fontColor=#edf7f0;align=left;verticalAlign=middle;spacingLeft=18;spacingRight=16;spacingTop=16;spacingBottom=16;arcSize=18;" vertex="1" parent="1">
+          <mxGeometry x="56" y="160" width="290" height="176" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="inputs" value="&lt;font style=&quot;font-size:11px;color:#83d8a6;letter-spacing:1px;&quot;&gt;INPUTS&lt;/font&gt;&lt;br&gt;&lt;b&gt;先に決めること&lt;/b&gt;&lt;br&gt;・建物名 / faction / category&lt;br&gt;・footprint と完成後の役割&lt;br&gt;・元の texture を保つか&lt;br&gt;・Built-in material で寄せるか" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1c1e;strokeColor=#3f4942;strokeWidth=1.5;fontSize=18;fontFamily=Noto Sans JP;fontColor=#edf7f0;align=left;verticalAlign=middle;spacingLeft=18;spacingRight=16;spacingTop=16;spacingBottom=16;arcSize=18;" vertex="1" parent="1">
+          <mxGeometry x="56" y="370" width="290" height="210" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="guardrails" value="&lt;font style=&quot;font-size:11px;color:#83d8a6;letter-spacing:1px;&quot;&gt;GUARDRAILS&lt;/font&gt;&lt;br&gt;&lt;b&gt;失敗しにくい前提&lt;/b&gt;&lt;br&gt;・土台は &lt;b&gt;Example building&lt;/b&gt;&lt;br&gt;・最初は完成モデル 1 個だけ&lt;br&gt;・Route B では .mat と .png の basename を分ける&lt;br&gt;・material / bundle 更新後は完全再起動&lt;br&gt;・値が Blueprint に出ないなら C# / BepInEx を検討" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1c1e;strokeColor=#3f4942;strokeWidth=1.5;fontSize=17;fontFamily=Noto Sans JP;fontColor=#edf7f0;align=left;verticalAlign=middle;spacingLeft=18;spacingRight=16;spacingTop=16;spacingBottom=16;arcSize=18;" vertex="1" parent="1">
+          <mxGeometry x="56" y="620" width="290" height="300" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="start" value="&lt;font style=&quot;font-size:11px;color:#dffbea;letter-spacing:1px;&quot;&gt;START&lt;/font&gt;&lt;br&gt;&lt;b&gt;新規建物アセットを作りたい&lt;/b&gt;&lt;br&gt;配置可能な建物として追加する" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2f855a;gradientColor=#83d8a6;gradientDirection=north;strokeColor=#83d8a6;strokeWidth=1.5;fontSize=18;fontFamily=Noto Sans JP;fontColor=#0f1712;align=left;verticalAlign=middle;spacingLeft=18;spacingRight=16;spacingTop=16;spacingBottom=16;arcSize=18;" vertex="1" parent="1">
+          <mxGeometry x="410" y="170" width="240" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="step1" value="&lt;font style=&quot;font-size:11px;color:#83d8a6;letter-spacing:1px;&quot;&gt;STEP 1&lt;/font&gt;&lt;br&gt;&lt;b&gt;Example building で土台を作る&lt;/b&gt;&lt;br&gt;Blueprint / icon / localization / 登録例を確保" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1c1e;strokeColor=#3f4942;strokeWidth=1.5;fontSize=17;fontFamily=Noto Sans JP;fontColor=#edf7f0;align=left;verticalAlign=middle;spacingLeft=18;spacingRight=16;spacingTop=16;spacingBottom=16;arcSize=18;" vertex="1" parent="1">
+          <mxGeometry x="700" y="166" width="250" height="142" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="step2" value="&lt;font style=&quot;font-size:11px;color:#83d8a6;letter-spacing:1px;&quot;&gt;STEP 2&lt;/font&gt;&lt;br&gt;&lt;b&gt;名前と仕様を固定する&lt;/b&gt;&lt;br&gt;建物 ID / faction / footprint / ToolGroup / cost" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1c1e;strokeColor=#3f4942;strokeWidth=1.5;fontSize=17;fontFamily=Noto Sans JP;fontColor=#edf7f0;align=left;verticalAlign=middle;spacingLeft=18;spacingRight=16;spacingTop=16;spacingBottom=16;arcSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="166" width="260" height="142" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="step3" value="&lt;font style=&quot;font-size:11px;color:#83d8a6;letter-spacing:1px;&quot;&gt;STEP 3&lt;/font&gt;&lt;br&gt;&lt;b&gt;Blender でモデルを整える&lt;/b&gt;&lt;br&gt;原点 / 向き / スケール / UV / Collection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1c1e;strokeColor=#3f4942;strokeWidth=1.5;fontSize=17;fontFamily=Noto Sans JP;fontColor=#edf7f0;align=left;verticalAlign=middle;spacingLeft=18;spacingRight=16;spacingTop=16;spacingBottom=16;arcSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="164" width="280" height="146" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="decision1" value="&lt;b&gt;元の texture を&lt;br&gt;保ちたい？&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#333537;strokeColor=#83d8a6;strokeWidth=2;fontSize=18;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#f3fff7;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="375" width="170" height="140" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="routeA" value="&lt;font style=&quot;font-size:11px;color:#83d8a6;letter-spacing:1px;&quot;&gt;ROUTE A&lt;/font&gt;&lt;br&gt;&lt;b&gt;Built-in material で進める&lt;/b&gt;&lt;br&gt;・Blender CLI で .timbermesh export&lt;br&gt;・Unity は使わない&lt;br&gt;・Timberborn 風に寄せる" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1c1e;strokeColor=#83d8a6;strokeWidth=2;fontSize=17;fontFamily=Noto Sans JP;fontColor=#edf7f0;align=left;verticalAlign=middle;spacingLeft=18;spacingRight=16;spacingTop=16;spacingBottom=16;arcSize=18;" vertex="1" parent="1">
+          <mxGeometry x="960" y="565" width="270" height="205" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="routeB" value="&lt;font style=&quot;font-size:11px;color:#c7f3d7;letter-spacing:1px;&quot;&gt;ROUTE B&lt;/font&gt;&lt;br&gt;&lt;b&gt;Texture を保持して進める&lt;/b&gt;&lt;br&gt;・.timbermesh + texture export&lt;br&gt;・Unity で Material 作成&lt;br&gt;・AssetBundle と MaterialCollection を追加" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2f855a;strokeColor=#83d8a6;strokeWidth=2;fontSize=17;fontFamily=Noto Sans JP;fontColor=#f4fff8;align=left;verticalAlign=middle;spacingLeft=18;spacingRight=16;spacingTop=16;spacingBottom=16;arcSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1285" y="545" width="320" height="220" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="step4" value="&lt;font style=&quot;font-size:11px;color:#83d8a6;letter-spacing:1px;&quot;&gt;STEP 4&lt;/font&gt;&lt;br&gt;&lt;b&gt;ゲーム側の配線を更新&lt;/b&gt;&lt;br&gt;Blueprint / TemplateCollection / icon / localization&lt;br&gt;Route B は MaterialCollection も追加" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1c1e;strokeColor=#3f4942;strokeWidth=1.5;fontSize=17;fontFamily=Noto Sans JP;fontColor=#edf7f0;align=left;verticalAlign=middle;spacingLeft=18;spacingRight=16;spacingTop=16;spacingBottom=16;arcSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="835" width="350" height="175" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="step5" value="&lt;font style=&quot;font-size:11px;color:#83d8a6;letter-spacing:1px;&quot;&gt;STEP 5&lt;/font&gt;&lt;br&gt;&lt;b&gt;built mod を配置 / build する&lt;/b&gt;&lt;br&gt;Route B は bundle 出力を同梱" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1c1e;strokeColor=#3f4942;strokeWidth=1.5;fontSize=17;fontFamily=Noto Sans JP;fontColor=#edf7f0;align=left;verticalAlign=middle;spacingLeft=18;spacingRight=16;spacingTop=16;spacingBottom=16;arcSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="1048" width="350" height="130" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="decision2" value="&lt;b&gt;配置 preview / material /&lt;br&gt;コストは正常？&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#333537;strokeColor=#83d8a6;strokeWidth=2;fontSize=18;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#f3fff7;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1440" y="1035" width="190" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="trouble" value="&lt;font style=&quot;font-size:11px;color:#83d8a6;letter-spacing:1px;&quot;&gt;RECHECK&lt;/font&gt;&lt;br&gt;&lt;b&gt;ログと配線を再確認&lt;/b&gt;&lt;br&gt;MaterialCollection / path / basename / Route 判定 / Blueprint 参照を見直す" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1c1e;strokeColor=#3f4942;strokeWidth=1.5;fontSize=16;fontFamily=Noto Sans JP;fontColor=#edf7f0;align=left;verticalAlign=middle;spacingLeft=18;spacingRight=16;spacingTop=16;spacingBottom=16;arcSize=18;" vertex="1" parent="1">
+          <mxGeometry x="700" y="1038" width="300" height="160" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="success" value="&lt;font style=&quot;font-size:11px;color:#dffbea;letter-spacing:1px;&quot;&gt;DONE&lt;/font&gt;&lt;br&gt;&lt;b&gt;配置成功&lt;/b&gt;&lt;br&gt;見た目と挙動をゲーム内確認" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2f855a;gradientColor=#83d8a6;gradientDirection=north;strokeColor=#83d8a6;strokeWidth=1.5;fontSize=18;fontFamily=Noto Sans JP;fontColor=#0f1712;align=left;verticalAlign=middle;spacingLeft=18;spacingRight=16;spacingTop=16;spacingBottom=16;arcSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1670" y="1030" width="110" height="170" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e1" edge="1" parent="1" source="start" target="step1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=40;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#83d8a6;strokeWidth=2;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="step1" target="step2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=40;html=1;strokeColor=#83d8a6;strokeWidth=2;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="step2" target="step3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=40;html=1;strokeColor=#83d8a6;strokeWidth=2;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="step3" target="decision1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=40;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#83d8a6;strokeWidth=2;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1475" y="340"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="decision1" target="routeA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=40;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#83d8a6;strokeWidth=2;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1095" y="455"/>
+              <mxPoint x="1095" y="535"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="decision1" target="routeB" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=40;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#83d8a6;strokeWidth=2;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1540" y="445"/>
+              <mxPoint x="1540" y="525"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="routeA" target="step4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=40;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.28;entryY=0;entryDx=0;entryDy=0;strokeColor=#83d8a6;strokeWidth=2;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1120" y="800"/>
+              <mxPoint x="1120" y="820"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="routeB" target="step4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=40;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.76;entryY=0;entryDx=0;entryDy=0;strokeColor=#83d8a6;strokeWidth=2;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1350" y="800"/>
+              <mxPoint x="1350" y="820"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="step4" target="step5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=40;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#83d8a6;strokeWidth=2;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1235" y="1020"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="step5" target="decision2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=40;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#83d8a6;strokeWidth=2;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="decision2" target="success" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=40;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#83d8a6;strokeWidth=2;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="decision2" target="trouble" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=40;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#83d8a6;strokeWidth=2;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1535" y="1240"/>
+              <mxPoint x="850" y="1240"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="trouble" target="decision1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=40;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#3f4942;strokeWidth=2;endArrow=block;endFill=1;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="850" y="1000"/>
+              <mxPoint x="650" y="1000"/>
+              <mxPoint x="650" y="345"/>
+              <mxPoint x="1475" y="345"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
