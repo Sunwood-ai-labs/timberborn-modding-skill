@@ -31,6 +31,11 @@ def assert_exists(path: Path, label: str, errors: list[str]) -> None:
         errors.append(f"Missing {label}: {path}")
 
 
+def assert_contains(text: str, needle: str, label: str, errors: list[str]) -> None:
+    if needle not in text:
+        errors.append(f"Missing expected text for {label}: {needle}")
+
+
 def validate_skill(repo: Path) -> list[str]:
     errors: list[str] = []
 
@@ -48,6 +53,13 @@ def validate_skill(repo: Path) -> list[str]:
 
     if errors:
         return errors
+
+    readme_text = read_text(readme_path)
+    readme_ja_text = read_text(readme_ja_path)
+    docs_config_text = read_text(repo / "docs" / ".vitepress" / "config.ts")
+    docs_index_text = read_text(repo / "docs" / "index.md")
+    docs_index_ja_text = read_text(repo / "docs" / "ja" / "index.md")
+    docs_workflow_text = read_text(repo / ".github" / "workflows" / "docs.yml")
 
     frontmatter = load_frontmatter(skill_path)
     for key in ("name", "description"):
@@ -96,6 +108,63 @@ def validate_skill(repo: Path) -> list[str]:
     ]
     for path in required_files:
         assert_exists(path, path.relative_to(repo).as_posix(), errors)
+
+    for needle, label in [
+        ("Route A", "README route split"),
+        ("Route B", "README route split"),
+        ("https://sunwood-ai-labs.github.io/timberborn-modding-skill/", "README docs link"),
+        ('git clone https://github.com/Sunwood-ai-labs/timberborn-modding-skill.git "$HOME/.codex/skills/timberborn-modding"', "README install command"),
+        ("uv run --with pyyaml python scripts/validate_skill.py .", "README validation command"),
+    ]:
+        assert_contains(readme_text, needle, label, errors)
+
+    for needle, label in [
+        ("ルートA", "README.ja route split"),
+        ("ルートB", "README.ja route split"),
+        ("https://sunwood-ai-labs.github.io/timberborn-modding-skill/ja/guide/getting-started", "README.ja localized docs link"),
+        ("https://sunwood-ai-labs.github.io/timberborn-modding-skill/ja/guide/troubleshooting", "README.ja localized docs link"),
+        ("uv run --with pyyaml python scripts/validate_skill.py .", "README.ja validation command"),
+    ]:
+        assert_contains(readme_ja_text, needle, label, errors)
+
+    for needle, label in [
+        ('base: "/timberborn-modding-skill/"', "VitePress base"),
+        ('provider: "local"', "local search"),
+        ('link: "/guide/workflow-routes"', "English route link"),
+        ('link: "/ja/guide/workflow-routes"', "Japanese route link"),
+        ('message: "MIT License のもとで公開しています。"', "Japanese footer"),
+    ]:
+        assert_contains(docs_config_text, needle, label, errors)
+
+    for needle, label in [
+        ("## Decide Your Route", "docs landing route guidance"),
+        ("[Route Guide](/guide/workflow-routes)", "docs route guide link"),
+        ("[Troubleshooting](/guide/troubleshooting)", "docs troubleshooting link"),
+    ]:
+        assert_contains(docs_index_text, needle, label, errors)
+
+    for needle, label in [
+        ("## 進め方の 3 ステップ", "docs ja landing route guidance"),
+        ("[ルート選定](/ja/guide/workflow-routes)", "docs ja route link"),
+        ("[トラブルシュート](/ja/guide/troubleshooting)", "docs ja troubleshooting link"),
+    ]:
+        assert_contains(docs_index_ja_text, needle, label, errors)
+
+    for needle, label in [
+        ("actions/configure-pages@v5", "Pages configuration action"),
+        ("actions/upload-pages-artifact@v3", "Pages artifact upload"),
+        ("actions/deploy-pages@v4", "Pages deploy action"),
+        ("path: docs/.vitepress/dist", "Pages artifact path"),
+    ]:
+        assert_contains(docs_workflow_text, needle, label, errors)
+
+    guide_names = sorted(path.name for path in (repo / "docs" / "guide").glob("*.md"))
+    guide_ja_names = sorted(path.name for path in (repo / "docs" / "ja" / "guide").glob("*.md"))
+    if guide_names != guide_ja_names:
+        errors.append(
+            "docs/guide and docs/ja/guide must contain the same markdown filenames. "
+            f"Found {guide_names!r} vs {guide_ja_names!r}."
+        )
 
     return errors
 
