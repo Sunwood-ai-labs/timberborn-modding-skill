@@ -1,0 +1,42 @@
+{
+  "BuildingSpec": {
+    "BuildingCost": [
+      {
+        "GoodId": "Log",
+        "Amount": 10
+      }
+    ],
+    "ScienceCost": 0
+  },
+  "BuildingModelSpec": {
+    "FinishedModelName": "#Finished",
+    "UnfinishedModelName": "#Unfinished"
+  },
+  "BlockObjectSpec": {},
+  "TemplateSpec": {
+    "TemplateName": "MyHouse.Folktails"
+  },
+  "PlaceableBlockObjectSpec": {
+    "ToolGroupId": "Decoration",
+    "Layout": "Single"
+  },
+  "LabeledEntitySpec": {
+    "DisplayNameLocKey": "Building.MyHouse.DisplayName",
+    "DescriptionLocKey": "Building.MyHouse.Description",
+    "Icon": "Buildings/Decorations/MyHouse/MyHouseIcon"
+  },
+  "Children": {
+    "#Finished": {
+      "TimbermeshSpec": {
+        "Model": "Buildings/Decorations/MyHouse/MyHouse.Folktails.Model"
+      }
+    },
+    "#Unfinished": {
+      "Children": {
+        "ConstructionBase1x1#nested": {
+          "BlueprintPath": "ConstructionBases/ConstructionBase1x1/ConstructionBase1x1.blueprint"
+        }
+      }
+    }
+  }
+}

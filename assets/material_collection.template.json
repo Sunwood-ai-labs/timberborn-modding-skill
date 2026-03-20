@@ -1,0 +1,7 @@
+{
+  "MaterialCollectionSpec": {
+    "Materials#append": [
+      "materials/myhouse/myhousebase"
+    ]
+  }
+}

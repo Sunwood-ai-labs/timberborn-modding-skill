@@ -1,0 +1,4 @@
+interface:
+  display_name: "Timberborn Modding"
+  short_description: "Build Timberborn mods from GLB to in-game buildings."
+  default_prompt: "Use $timberborn-modding to turn a GLB into a Timberborn building mod and choose the right Blender or AssetBundle path."
